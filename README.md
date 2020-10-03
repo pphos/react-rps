@@ -1,5 +1,8 @@
 # react-rps
 A rock-paper-scissors application with a webcam using the HandPose Tensorflow.js trained model.
+If you want to start this game, please click the below link.
+
+https://pphos.github.io/react-rps/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
