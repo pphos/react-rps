@@ -1,5 +1,5 @@
 # react-rps
-A rock-paper-scissors application with a webcam using the HandPose Tensorflow.js trained model.
+A rock-paper-scissors application with a webcam using the HandPose Tensorflow.js trained model.  
 If you want to start this game, please click the below link.
 
 https://pphos.github.io/react-rps/
