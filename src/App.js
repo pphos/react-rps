@@ -14,7 +14,7 @@ const App = () => {
   });
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Switch>
         <Route exact path={appURL.top}>
           <GameTop
