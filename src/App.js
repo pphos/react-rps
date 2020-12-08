@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import GameTop from './pages/GameTop';
 import GameMain from './pages/GameMain';
@@ -14,7 +14,7 @@ const App = () => {
   });
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path={appURL.top}>
           <GameTop
@@ -35,7 +35,7 @@ const App = () => {
           />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
