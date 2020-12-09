@@ -25,6 +25,7 @@ const GameMain = ({gameStore, setGameStore}) => {
 
   const [question, setQuestion] = useState(generateQuestion());
   const [poseCounter, setPoseCounter] = useState(poseCounterInit);
+  const [playerHandName, setPlayerHandName] = useState('');
   const [model, setModel] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -46,7 +47,7 @@ const GameMain = ({gameStore, setGameStore}) => {
   // じゃんけんの手の推論
   useEffect(() => {
     const handleEstimate = () => {
-      estimateHands(setPoseCounter, webcamRef, canvasRef, model, GE);
+      estimateHands(setPoseCounter, setPlayerHandName, webcamRef, canvasRef, model, GE);
     }
 
     if (estimateReady) {
@@ -83,6 +84,7 @@ const GameMain = ({gameStore, setGameStore}) => {
       // 試行回数のカウント
       setCount(count => count + 1);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [poseCounter]);
 
   // 問題更新
@@ -105,6 +107,7 @@ const GameMain = ({gameStore, setGameStore}) => {
         }, 1000);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAnswered]);
 
   return (
@@ -113,6 +116,7 @@ const GameMain = ({gameStore, setGameStore}) => {
         <Player
           webcamRef={webcamRef}
           canvasRef={canvasRef}
+          currentHand={playerHandName}
         />
         <Question
           text={question.text}

@@ -14,13 +14,14 @@ export async function loadModel(setModel) {
 
 /**
  * モデルから手のポーズを推論
- * @param  setPoseCounter : poseCounterのステートを更新する関数
- * @param  webcamRef      : webcamへのref
- * @param  canvasRef      : canvasへのref
- * @param  model          : handposeモデル
- * @param  GE             : GestureEstimatorオブジェクト (モデルにおける手のジェスチャーを定義したオブジェクト)
+ * @param  setPoseCounter     : poseCounterのステートを更新する関数
+ * @param  setPlayerHandName  : playerHandNameのステートを更新する関数
+ * @param  webcamRef          : webcamへのref
+ * @param  canvasRef          : canvasへのref
+ * @param  model              : handposeモデル
+ * @param  GE                 : GestureEstimatorオブジェクト (モデルにおける手のジェスチャーを定義したオブジェクト)
  */
-export async function estimateHands(setPoseCounter, webcamRef, canvasRef, model, GE) {
+export async function estimateHands(setPoseCounter, setPlayerHandName, webcamRef, canvasRef, model, GE) {
   const video = webcamRef.current;
   const canvas = canvasRef.current;
   const ctx = canvas.getContext('2d');
@@ -36,6 +37,7 @@ export async function estimateHands(setPoseCounter, webcamRef, canvasRef, model,
         total: poseCounter.total + 1,
         [handName]: poseCounter[handName] + 1
       }));
+      setPlayerHandName(handName);
     }
   }
 }

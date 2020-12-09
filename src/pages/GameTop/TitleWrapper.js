@@ -7,7 +7,7 @@ import Title from '../shared/Title';
 const TitleWrapper = (props) => {
   return (
     <div tw="row-span-1 col-span-3">
-     <Title>{props.children}</Title>
+      <Title>{props.children}</Title>
     </div>
   )
 }

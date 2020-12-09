@@ -42,6 +42,13 @@ export const rpsHandArr = [
   { id: 2, text: "paper", img: PaperImg }
 ];
 
+// じゃんけんの手の絵文字
+export const emojiRpsHand = {
+  rock: '✊',
+  scissors: '✌',
+  paper: '✋'
+};
+
 // 各指のランドマークの設定
 export const landmarksObj = {
   colors: {
