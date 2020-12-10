@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import tw, {styled} from 'twin.macro';
 
-import SwitchFrame from '../../layout/SwitchFrame';
 import TitleWrapper from './TitleWrapper';
 import Container from './Container';
 import ButtonGroup from './ButtonGroup';
@@ -21,17 +20,15 @@ const GameTop = ({timesArr, setGameStore}) => {
   }
 
   return (
-    <SwitchFrame>
-      <Container>
-        <TitleWrapper>
-          {topTitleText}
-        </TitleWrapper>
-        <ButtonGroup
-          timesArr={timesArr}
-          onClick={handleOnClick}
-        />
-      </Container>
-    </SwitchFrame>
+    <Container>
+      <TitleWrapper>
+        {topTitleText}
+      </TitleWrapper>
+      <ButtonGroup
+        timesArr={timesArr}
+        onClick={handleOnClick}
+      />
+    </Container>
   );
 }
 

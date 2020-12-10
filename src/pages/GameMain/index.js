@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import tw from 'twin.macro';
 import fp from 'fingerpose';
 
-import SwitchFrame from '../../layout/SwitchFrame';
 import Player from './Player';
 import Question from './Question';
 import Judge from './Judge';
@@ -111,7 +110,7 @@ const GameMain = ({gameStore, setGameStore}) => {
   }, [isAnswered]);
 
   return (
-    <SwitchFrame>
+    <>
       <div tw="grid grid-cols-2 h-full">
         <Player
           webcamRef={webcamRef}
@@ -130,7 +129,7 @@ const GameMain = ({gameStore, setGameStore}) => {
           isCorrect={isCorrect}
         />
       </div>
-    </SwitchFrame>
+    </>
   );
 }
 
